@@ -53,20 +53,20 @@ assets made by myself and not mentioned in the [Third party assets](#third-party
 ## Third party assets
 
 Coin sound is made by [ProjectsU012](https://freesound.org/people/ProjectsU012/sounds/341695/) under the [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license.  
-`src/android/assets/sounds/coin.wav`
+[src/android/assets/sounds/coin.wav](src/android/assets/sounds/coin.wav)
 
 Success sound is made by [jobro](https://freesound.org/people/jobro/sounds/60443/) under the [CC-BY-3.0](https://creativecommons.org/licenses/by/3.0/) license.  
-`src/android/assets/sounds/success.wav`
+[src/android/assets/sounds/success.wav](src/android/assets/sounds/success.wav)
 
 Game over sound is made by [cabled_mess](https://freesound.org/people/cabled_mess/sounds/350985/) under the [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/) license.  
-`src/android/assets/sounds/game-over.wav`
+[src/android/assets/sounds/game-over.wav](src/android/assets/sounds/game-over.wav)
 
 Pop sound is made by [greenvwbeetle](https://freesound.org/people/greenvwbeetle/sounds/244652/) under the [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/) license.  
-`src/android/assets/sounds/pop.wav`
+[src/android/assets/sounds/pop.wav](src/android/assets/sounds/pop.wav)
 
-Star and pause image by kenney.nl (https://www.kenney.nl/assets/game-icons) are licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)  
-`src/android/assets/images/star.png`
-`src/android/assets/images/pause.png`
+Star and pause image by [kenney.nl](https://www.kenney.nl/assets/game-icons) are licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)  
+[src/android/assets/images/star.png](src/android/assets/images/star.png)  
+[src/android/assets/images/pause.png](src/android/assets/images/pause.png)
 
 Font is made by [Hanken Design Co.](https://hanken.co/collections/free/products/jellee) under the [OFL](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl) license.  
-`src/android/assets/jellee.roman.ttf`
+[src/android/assets/jellee.roman.ttf](src/android/assets/jellee.roman.ttf)
