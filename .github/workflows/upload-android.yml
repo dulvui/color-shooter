@@ -43,4 +43,4 @@ jobs:
         with:
           package-name: ${{ env.PACKAGE_NAME }}
           working-directory: ${{ env.WORKING_DIRECTORY }}
-          changes-not-sent-for-review: true
+          changes-not-sent-for-review: 'true'
