@@ -30,9 +30,6 @@ android {
             storePassword 'STORE_PASSWORD'
             keyAlias 'KEYSTORE_ALIAS'
             keyPassword 'KEY_PASSWORD'
-            // storePassword keystoreProperties['storePassword']
-            // keyAlias keystoreProperties['keyAlias']
-            // keyPassword keystoreProperties['keyPassword']
         }
     }
     buildTypes {
