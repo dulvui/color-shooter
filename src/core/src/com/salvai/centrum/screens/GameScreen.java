@@ -6,6 +6,7 @@ import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Container;
 import com.salvai.centrum.CentrumGameClass;
 import com.salvai.centrum.actors.effects.Explosion;
 import com.salvai.centrum.actors.enemys.EnemyBall;
@@ -15,6 +16,8 @@ import com.salvai.centrum.enums.GameType;
 import com.salvai.centrum.input.GameInputProcessor;
 import com.salvai.centrum.utils.Constants;
 import com.salvai.centrum.utils.GameFlowManager;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+
 
 import static com.salvai.centrum.enums.GameState.RUNNING;
 
@@ -23,16 +26,19 @@ public class GameScreen extends ScreenAdapter {
     public CentrumGameClass game;
     public int countdownTime;
     public GameFlowManager gameFlowManager;
+    private Stage stage;
     private int fadeOutTime;
+    private Container<Label> scoreContainer;
     private Label scoreLabel;
     private Texture pauseTexture;
     private boolean adVisible;
 
 
-
     public GameScreen(CentrumGameClass gameClass) {
         super();
         game = gameClass;
+
+        stage = new Stage(game.viewport);
 
         adVisible = false;
 
@@ -43,9 +49,14 @@ public class GameScreen extends ScreenAdapter {
 
         countdownTime = 199;
         fadeOutTime = 20;
+        scoreLabel = new Label("3", game.skin, "score");
 
-        scoreLabel = new Label("3", game.skin, "default");
-        scoreLabel.setPosition(Constants.WIDTH_CENTER , Constants.HEIGHT_CENTER);
+        scoreContainer = new Container<Label>(scoreLabel);
+        scoreContainer.setTransform(true);
+        scoreContainer.setSize(50, 50);
+        scoreContainer.setOrigin(scoreContainer.getWidth() / 2, scoreContainer.getHeight() / 2);
+        scoreContainer.setPosition(Constants.WIDTH_CENTER - scoreContainer.getWidth() / 2, Constants.HEIGHT_CENTER -  scoreContainer.getHeight() / 2);
+        stage.addActor(scoreContainer);
 
         pauseTexture = game.assetsManager.manager.get(Constants.PAUSE_BUTTON_IMAGE_NAME, Texture.class);
 
@@ -73,6 +84,7 @@ public class GameScreen extends ScreenAdapter {
         } else if (game.gameState == RUNNING) {
             gameFlowManager.update(delta);
         }
+
         drawGame(delta);
 
 
@@ -140,6 +152,9 @@ public class GameScreen extends ScreenAdapter {
                 explosion.particleEffect.draw(game.batch);
         }
         game.batch.end();
+
+        stage.act(delta);
+        stage.draw();
     }
 
 
@@ -155,11 +170,18 @@ public class GameScreen extends ScreenAdapter {
     public void resize(int width, int height) {
         // change the stage's viewport when teh screen size is changed
         game.viewport.update(width, height, true);
+        stage.getViewport().update(width, height, true);
     }
 
     @Override
     public void resume() {
         Gdx.input.setInputProcessor(new GameInputProcessor(this));
+    }
+
+
+    @Override
+    public void dispose() {
+        stage.dispose();
     }
 
 

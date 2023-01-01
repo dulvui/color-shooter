@@ -45,12 +45,6 @@
   }
 
 
- -keep class com.badlogic.gdx.graphics.g2d.BitmapFont{
-     **[] $VALUES;
-      *;
-  }
-
-
  -keep class com.salvai.centrum.levels.**{
    **[] $VALUES;
     *;

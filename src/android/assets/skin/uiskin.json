@@ -3,6 +3,9 @@ com.badlogic.gdx.graphics.g2d.BitmapFont: {
 	jelleeroman: {
 		file: jellee.roman.fnt
 	}
+	jelleeroman-score: {
+		file: jellee.roman(2).fnt
+	}
 }
 com.badlogic.gdx.graphics.Color: {
 	black: {
@@ -229,6 +232,10 @@ com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
 		font: jelleeroman
 		fontColor: white
 		background: round-white
+	}
+	score: {
+		font: jelleeroman-score
+		fontColor: black
 	}
 }
 com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle: {
