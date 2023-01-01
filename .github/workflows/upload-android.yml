@@ -40,5 +40,5 @@ jobs:
       - name: Export signed apk and release to internal testing
         uses: dulvui/libgdx-android-upload@v1.2
         with:
-          package-name: com.salvai.whatcolor
+          package-name: com.salvai.centrum
           working-directory: ${{ env.WORKING_DIRECTORY }}
