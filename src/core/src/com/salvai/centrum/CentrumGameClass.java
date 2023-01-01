@@ -5,7 +5,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.Array;
@@ -23,7 +22,6 @@ import com.salvai.centrum.utils.Text;
 public class CentrumGameClass extends Game {
 
     public SpriteBatch batch;
-    public BitmapFont font;
     public Preferences preferences;
     public OrthographicCamera camera;
     public Viewport viewport;

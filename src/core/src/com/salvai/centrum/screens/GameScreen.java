@@ -5,7 +5,7 @@ import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.GlyphLayout;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.salvai.centrum.CentrumGameClass;
 import com.salvai.centrum.actors.effects.Explosion;
 import com.salvai.centrum.actors.enemys.EnemyBall;
@@ -24,7 +24,7 @@ public class GameScreen extends ScreenAdapter {
     public int countdownTime;
     public GameFlowManager gameFlowManager;
     private int fadeOutTime;
-    private GlyphLayout scoreLayout;
+    private Label scoreLabel;
     private Texture pauseTexture;
     private boolean adVisible;
 
@@ -44,7 +44,8 @@ public class GameScreen extends ScreenAdapter {
         countdownTime = 199;
         fadeOutTime = 20;
 
-        scoreLayout = new GlyphLayout(game.font, "3");
+        scoreLabel = new Label("3", game.skin, "default");
+        scoreLabel.setPosition(Constants.WIDTH_CENTER , Constants.HEIGHT_CENTER);
 
         pauseTexture = game.assetsManager.manager.get(Constants.PAUSE_BUTTON_IMAGE_NAME, Texture.class);
 
@@ -62,7 +63,7 @@ public class GameScreen extends ScreenAdapter {
         if (countdownTime > 0 && game.gameState == RUNNING) {
             if (countdownTime < 180) {
                 gameFlowManager.ball.sprite.setAlpha(1);
-                scoreLayout.setText(game.font, "" + ((countdownTime / 60) + 1));
+                scoreLabel.setText("" + ((countdownTime / 60) + 1));
                 countdownTime -= delta;
             } else {
                 //fade in style
@@ -111,21 +112,18 @@ public class GameScreen extends ScreenAdapter {
                 missile.sprite.draw(game.batch);
 
         if (countdownTime == 0)
-            scoreLayout.setText(game.font, "" + game.score);
+            scoreLabel.setText("" + game.score);
 
         if (game.gameType == GameType.ENDLESS) {
             if (!gameFlowManager.gameOver) {
                 gameFlowManager.ball.sprite.draw(game.batch);
-                game.font.draw(game.batch, scoreLayout, Constants.WIDTH_CENTER - scoreLayout.width * 0.5f, Constants.HEIGHT_CENTER + scoreLayout.height * 0.5f);
             }
         } else if (gameFlowManager.gameOver) {
             if (game.levelSucceed) {
                 gameFlowManager.ball.sprite.draw(game.batch);
-                game.font.draw(game.batch, scoreLayout, Constants.WIDTH_CENTER - scoreLayout.width * 0.5f, Constants.HEIGHT_CENTER + scoreLayout.height * 0.5f);
             }
         } else {
             gameFlowManager.ball.sprite.draw(game.batch);
-            game.font.draw(game.batch, scoreLayout, Constants.WIDTH_CENTER - scoreLayout.width * 0.5f, Constants.HEIGHT_CENTER + scoreLayout.height * 0.5f);
         }
 
 

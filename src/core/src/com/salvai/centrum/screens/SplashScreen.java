@@ -41,7 +41,6 @@ public class SplashScreen extends ScreenAdapter {
         game.batch.begin();
 
         if (countdownTime == 0) {
-            assignFonts();
             game.skin = game.assetsManager.manager.get(Constants.SKIN_FILE_NAME, Skin.class);
             game.setScreen(new MenuScreen(game));
             dispose();
@@ -58,10 +57,6 @@ public class SplashScreen extends ScreenAdapter {
         game.drawBackground(delta);
         splashSprite.draw(game.batch);
         game.batch.end();
-    }
-
-    private void assignFonts() {
-        game.font = game.assetsManager.manager.get(Constants.WHITE_FONT_NAME, BitmapFont.class);
     }
 
     private void loadLevels(int levelLoadCount) {
