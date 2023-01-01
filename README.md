@@ -1,6 +1,6 @@
 # color-shooter
 [![iOS upload](https://github.com/dulvui/color-shooter/actions/workflows/upload-ios.yml/badge.svg)](https://github.com/dulvui/color-shooter/actions/workflows/upload-ios.yml)
-[![Android upload](https://github.com/dulvui/color-shooter/actions/workflows/upload-android.yml/badge.svg)](https://github.com/dulvui/color-shooter/actions/workflows/upload-android.yml)
+[![Android upload](https://github.com/dulvui/color-shooter/actions/workflows/upload-android.yml/badge.svg)](https://github.com/dulvui/color-shooter/actions/workflows/upload-android.yml)  
 My very first game created with libGDX.  
 Let the white balls reach the centre and tap to shoot the other colored balls.
 
